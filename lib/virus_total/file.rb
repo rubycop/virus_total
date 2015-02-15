@@ -5,18 +5,18 @@ module VirusTotal
     end
 
     def rescan
-      api_response('file/rescan', resource: @resource.to_str)
+      api_response('file/rescan', resource: resource)
     end
 
     def report
-      api_response('file/report', resource: @resource.to_str)
+      api_response('file/report', resource: resource)
     end
 
     private
 
     def get_file
       tmp = Tempfile.open('tmp')
-      tmp.write(IO::File.read(@resource.to_str))
+      tmp.write(IO::File.read(resource))
       tmp
     end
   end

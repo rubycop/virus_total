@@ -11,6 +11,12 @@ module VirusTotal
       @apikey   = apikey
     end
 
+    def resource(separator = ", ")
+      return @resource.join(separator) if @resource.is_a?(Array)
+
+      @resource
+    end
+
     def api_response(url, params = {})
       full_url = BASE_URL + url
       params = default_params.merge(params)

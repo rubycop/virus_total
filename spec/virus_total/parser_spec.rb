@@ -42,8 +42,4 @@ describe Hash do
      "if hash key with a space" do
     hash.key2.key_3.should == "val3"
   end
-
-  it "returns hash w/o key correctly" do
-    hash.except_key("key2").should == {"key1"=>"val1"}
-  end
 end

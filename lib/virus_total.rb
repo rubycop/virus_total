@@ -1,4 +1,4 @@
-require "core_extensions"
+require "core_extentions"
 require "virus_total/base"
 require "virus_total/url"
 require "virus_total/file"

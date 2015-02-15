@@ -10,16 +10,17 @@ module VirusTotal
     end
 
     def info
-      @response.except_key("scans")
+      return unless @response
+
+      @response.tap { |hash| hash.delete("scans") }
     end
 
     def dangers
-      scans = @response.scans
       return {} unless scans
 
       dangers = {}
       scans.each_pair do |key, hash|
-        next unless hash.detected
+        next unless hash["detected"]
 
         dangers.merge!({ key => hash })
       end
