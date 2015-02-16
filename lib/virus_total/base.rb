@@ -21,7 +21,8 @@ module VirusTotal
       full_url = BASE_URL + url
       params = default_params.merge(params)
 
-      api_request(full_url, params)
+      resp = api_request(full_url, params)
+      Response.new(resp)
     end
 
     private

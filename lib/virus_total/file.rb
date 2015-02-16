@@ -16,7 +16,7 @@ module VirusTotal
 
     def get_file
       tmp = Tempfile.open('tmp')
-      tmp.write(IO::File.read(resource))
+      tmp.write(::File.read(resource))
       tmp
     end
   end

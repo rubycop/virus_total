@@ -1,5 +1,5 @@
 shared_examples_for 'single resource' do
-  let(:response) { JSON.parse(subject) }
+  let(:response) { subject.instance_variable_get("@response") }
 
   it 'should returns correct response' do
     response.should be_a_kind_of(Hash)
@@ -7,7 +7,7 @@ shared_examples_for 'single resource' do
 end
 
 shared_examples_for 'multiply resources' do
-  let(:response) { JSON.parse(subject) }
+  let(:response) { subject.instance_variable_get("@response") }
 
   it 'should returns correct response' do
     response.should be_a_kind_of(Array)

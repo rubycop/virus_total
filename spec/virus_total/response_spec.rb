@@ -1,32 +1,32 @@
 require "virus_total"
 
-describe VirusTotal::Parser do
+describe VirusTotal::Response do
   let(:response) {
     "{\"permalink\":\"https://www.virustotal.com/url\","\
     "\"resource\":\"https://www.example.com\","\
     "\"response_code\":1,"\
     "\"scans\":{\"CLEAN MX\":{\"detected\":true}}}"
   }
-  let(:parser) { VirusTotal::Parser.new(response) }
+  let(:response_str) { VirusTotal::Response.new(response) }
 
   it "parse response correctly" do
-    parser.instance_variable_get("@response").should_not be_nil
+    response_str.instance_variable_get("@response").should_not be_nil
   end
 
   it "returns info correctly" do
-    parser.info.should_not match(/scans/)
+    response_str.info.should_not match(/scans/)
   end
 
   it "returns dangers correctly" do
-    parser.dangers.should == {"CLEAN MX"=>{"detected"=>true}}
+    response_str.dangers.should == {"CLEAN MX"=>{"detected"=>true}}
   end
 
   it "returns danger brands correctly" do
-    parser.danger_brands.should == ["CLEAN MX"]
+    response_str.danger_brands.should == ["CLEAN MX"]
   end
 
   it "returns hash value correctly" do
-    parser.response_code.should == 1
+    response_str.response_code.should == 1
   end
 end
 

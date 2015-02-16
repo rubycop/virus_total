@@ -1,7 +1,7 @@
 require 'json'
 
 module VirusTotal
-  class Parser
+  class Response
 
     attr_reader :response
 
