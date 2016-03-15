@@ -1,0 +1,12 @@
+ruby_version: 1.9.3-p545
+bundler_version: 1.7.8
+
+test_pattern:
+  - spec/**_spec.rb
+
+notify:
+  - channel: email
+    trigger-on: failed
+    branch: master/*
+    message: "Build failed with %error-count% error(s)"
+    recipients: "saychuk.andriy@gmail.com"

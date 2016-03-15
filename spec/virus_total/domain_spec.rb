@@ -5,7 +5,7 @@ describe VirusTotal::Domain do
   let(:api_key) { "--YOUR_PRIVATE_KEY--" }
   let(:domain) { VirusTotal::Domain.new("heroku.com", api_key) }
 
-  skip "for single domain" do
+  pending "for single domain" do
     context "for 'domain/report'" do
       subject { domain.report }
       it_should_behave_like 'single resource'

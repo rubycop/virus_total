@@ -32,7 +32,7 @@ describe VirusTotal::Url do
     end
 
     # url/report not working for multiply urls.
-    skip "for 'url/report'" do
+    pending "for 'url/report'" do
       subject { resource.report }
       it_should_behave_like 'multiply resources'
     end

@@ -84,8 +84,13 @@ domain = VirusTotal::Domain.new("example.com", "-- PRIVATE API KEY--")
 
 domain.report # response from GET "domain/report"
 ```
-### Unsupported
-* "comments/puts"
+### Commenting
+```ruby
+# initialize
+comment = VirusTotal::Comment.new("-- Hash of file --", "-- PUBLIC API KEY --")
+
+comment.put "-- Comment text here --"   # post a comment on the resource
+```
 
 ## Contributing
 
