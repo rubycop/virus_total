@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake",    "~> 10.0"
   spec.add_development_dependency "rspec",   "~> 2.6"
 
-  spec.add_dependency "rest-client", "~> 1.6.7"
+  spec.add_dependency "rest-client", "~> 2.0"
 end

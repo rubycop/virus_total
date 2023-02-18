@@ -36,7 +36,7 @@ module VirusTotal
         raise ExceedApiLimitError if resp.code == 204
         raise AuthError           if resp.code == 403
 
-        resp.return!(req, result, &block)
+        resp.return!(&block)
       end
     end
   end
